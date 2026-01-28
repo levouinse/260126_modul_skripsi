@@ -1,0 +1,251 @@
+/* Warna untuk Modul Terracotta Warm Elegant */
+
+.default-color{
+    color: #ffe8d6 !important;
+}
+
+.default-color-dark{
+    color: #5c2c1a !important;
+}
+
+a:not(.btn):not(.a-menu):not(.submenu-toggle):not(.default-color):not(.nav-link.active):not(.page-item.active .page-link):not(.ignore-color),
+p:not(.lh-sm):not(.lh-sm-value):not(.default-color):not(.ignore-color), 
+span:not(.span-title-menu):not(.desc-module):not(.badge):not(.btn):not(.filter-remove):not(.btn-text):not([class^="text"]):not(.ignore-color), 
+li:not(.active):not(.ignore-color), 
+h1:not(.ignore-color), 
+h2:not(.ignore-color), 
+h3:not(.ignore-color), 
+h4:not(.ignore-color), 
+h5:not(.ignore-color), 
+h6:not(.ignore-color), 
+div:not(.ignore-color), 
+label:not(.not-default-color):not(.ignore-color), 
+td:not(.ignore-color), 
+tr:not(.ignore-color){
+    color: #000000 !important;
+}
+
+.submenu {
+    background-color: #a35829;
+}
+
+.shadow{
+    box-shadow: rgba(163, 88, 41, 0.3) 0px 0px 12px !important;
+}
+
+.dropdown-menu-s a,
+.dropdown-menu-s a {
+    color: #ffe8d6;
+}
+
+.dropdown-menu-s a:hover {
+    background-color: #7a3f1a;
+}
+
+footer {
+    background-color: #a35829;
+    padding: 1rem;
+}
+
+.dropdown-menu-s {
+    background-color: #a35829;
+}
+
+@media(min-width:992px){
+    .offcanvas-body .dropdown-menu-s span {
+        color:  #ffe8d6;
+    }
+
+    nav .submenu a {
+        color:  #ffe8d6 !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .submenu {
+        background-color: #a35829;
+    }
+    .navbar-nav .nav-item .nav-link a {
+        color: #000;
+    }
+
+    .sidebar {
+        color: black;
+    }
+
+    .offcanvas-body .nav-link {
+        color: black !important;
+    }
+
+    .offcanvas-body {
+        background-color: #fff5eb;
+    }
+
+    .dropdown .dropdown-1 .submenu {
+        background-color: #fff;
+        border: 1px solid #979797;
+    }
+
+    .dropdown .dropdown-1 .submenu a {
+        color: #333 !important;
+        background-color: none;
+    }
+
+    .dropdown .dropdown-1 .submenu a:hover {
+        cursor: pointer;
+    }
+
+    .dropdown-toggle-s {
+        color: #fff;
+    }
+
+    .dropdown-menu-s {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #a35829;
+    }
+
+    .dropdown-menu-s a,
+    .dropdown-menu-s a {
+        color: #444;
+    }
+
+    .dropdown-menu-s hr {
+        color: #333;
+    }
+
+    .dropdown-menu-s a:hover,
+    .dropdown-menu-s a:hover {
+        background-color: #4444442e;
+    }
+
+    .dropdown-s .dropdown-toggle-s:hover,
+    .dropdown-s .dropdown-toggle-s:active {
+        color: #444;
+    }
+
+    .dropdown-s .dropdown-toggle-s,
+    .dropdown-s .dropdown-toggle-s {
+        color: #555555e0;
+    }
+
+    .dropdown-s .dropdown-toggle-s.active,
+    .dropdown-s .dropdown-toggle-s.active {
+        color: #111;
+    }
+    .submenu {
+        box-shadow: -30px 30px 10px rgb(0, 0, 0);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.table tr th {
+    background-color: #a35829 !important;
+    color: #ffffff !important;
+}
+
+/* FILTER and TAB */
+.nav-link.active{
+    border:unset;
+    background-color: #a35829 !important;
+    color: #ffffff !important;
+}
+
+.university-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #a35829;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.nav-toggle span {
+    width: 20px;
+    height: 2px;
+    background: #a35829;
+    margin: 2px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.dropdown-divider {
+    margin: 8px 0;
+    border-top: 1px solid #ecf0f1;
+}
+
+.main-navbar {
+    background: #ffffff;
+    box-shadow: 0 2px 20px rgba(163, 88, 41, 0.1);
+    padding: 12px 0;
+}
+
+.top-bar {
+    background: linear-gradient(135deg, #a35829 0%, #c47c4a 100%);
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-action-btn {
+    background: #f8f9fa;
+    color: #a35829;
+}
+
+.nav-action-btn:hover {
+    background: linear-gradient(135deg, #a35829, #c47c4a);
+    color: #ffffff;
+}
+
+.notification-badge {
+    background: #d2691e;
+    color: white;
+}
+.menu-2 .nav-item .nav-link .nontifikasi {
+    background-color: #b5651d;
+}
+
+/* BATAS AKHIRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR */
+
+.topbar-link {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.topbar-link:hover {
+    color: #ffffff;
+}
+
+.user-profile {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.user-profile:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+.avatar {
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.user-menu {
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(163, 88, 41, 0.2);
+}
+
+.dropdown-item {
+    color: #2c3e50;
+}
+
+.system-name {
+    color: #7f8c8d;
+}
+.nav-action-btn {
+    background: #f8f9fa;
+}
+
+.nav-action-btn:hover {
+    color: #ffffff;
+    box-shadow: 0 5px 15px rgba(163, 88, 41, 0.3);
+}
+
+.notification-badge {
+    color: white;
+}
