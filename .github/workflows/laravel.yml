@@ -21,7 +21,7 @@ jobs:
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
     - name: Install NPM Dependencies
-      run: npm ci
+      run: npm i --legacy-peer-deps
     - name: Build Assets
       run: npm run build
     - name: Generate key
