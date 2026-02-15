@@ -1,4 +1,5 @@
 <template>
+    <OneTimeLogoSplash />
     <PanelLayout :app_tagline="app_tagline">
         <!-- Sidebar khusus Apps -->
         <template #sidebar>
@@ -21,61 +22,77 @@
                 <div class="offcanvas-body">
                     <!-- Beranda -->
                     <div class="dropdown-s">
-                        <Link :href="'#'" class="dropdown-toggle-s">
+                        <Link :href="route('dashboard')" class="dropdown-toggle-s">
                             <i class="fa fa-home"></i> Beranda
                         </Link>
                     </div>
-                    <div class="dropdown-s">
-                        <Link :href="'#'" class="dropdown-toggle-s">
-                            <i class="fa fa-dollar"></i> Tagihan
-                        </Link>
-                    </div>
 
-                    <!-- Catatan -->
-                    <div class="dropdown-s submenu-laporan">
-                        <a class="dropdown-toggle-s" @click.stop="toggleDropdown('laporan')">
-                            <i class="fa fa-file-text-o"></i> Laporan
-                            <i class="ml-2 bi" :class="activeDropdown === 'laporan' ? 'bi-caret-up-fill' : 'bi-caret-down-fill'"></i>
-                        </a>
-                        <div class="dropdown-menu-s" :class="{ 'show': activeDropdown === 'laporan' }">
-                            <span class="span-title-menu not-default-size">Laporan</span>
-                            <hr />
-                            
-                            <!-- Arsip Dosen -->
-                            <div class="dropdown-submenu">
-                                <a class="a-menu" @click.stop="toggleSubDropdown('arsip-dosen')">
-                                    Laporan Keuangan
-                                    <i class="ml-2 bi" :class="activeSubDropdown === 'arsip-dosen' ? 'bi-caret-up-fill' : 'bi-caret-down-fill'"></i>
-                                </a>
-                                <div class="dropdown-menu-sub" :class="{ 'show': activeSubDropdown === 'arsip-dosen' }">
-                                    <span class="span-title-menu not-default-size">Laporan Keuangan</span>
-                                    <hr />
-                                    <Link :href="'#'" class="a-menu">
-                                        Laporan Keuangan UKT
-                                    </Link>
-                                </div>
-                            </div>
+                    <!-- Menu untuk MAHASISWA saja -->
+                    <template v-if="$page.props.auth.user.role === 'mahasiswa'">
+                        <!-- Aktivitas -->
+                        <div class="dropdown-s">
+                            <Link :href="route('aktivitas')" class="dropdown-toggle-s">
+                                <i class="fa fa-calendar"></i> Aktivitas
+                            </Link>
+                        </div>
 
-                            <!-- Arsip Mahasiswa -->
-                            <div class="dropdown-submenu">
-                                <a class="a-menu" @click.stop="toggleSubDropdown('arsip-mahasiswa')">
-                                    Statistika Keuangan
-                                    <i class="ml-2 bi" :class="activeSubDropdown === 'arsip-mahasiswa' ? 'bi-caret-up-fill' : 'bi-caret-down-fill'"></i>
-                                </a>
-                                <div class="dropdown-menu-sub" :class="{ 'show': activeSubDropdown === 'arsip-mahasiswa' }">
-                                    <span class="span-title-menu not-default-size">Arsip Mahasiswa</span>
-                                    <hr />
-                                    <Link :href="'#'" class="a-menu">
-                                        Laporan Uang Masuk
-                                    </Link>
-                                    <Link :href="'#'" class="a-menu">
-                                        Perbandingan UKT
-                                    </Link>
-                                </div>
+                        <!-- Nilai -->
+                        <div class="dropdown-s">
+                            <Link :href="route('nilai')" class="dropdown-toggle-s">
+                                <i class="fa fa-star"></i> Nilai Saya
+                            </Link>
+                        </div>
+
+                        <!-- Magang/KKN -->
+                        <div class="dropdown-s submenu-magang">
+                            <a class="dropdown-toggle-s" @click.stop="toggleDropdown('magang')">
+                                <i class="fa fa-briefcase"></i> Magang & KKN
+                                <i class="ml-2 bi" :class="activeDropdown === 'magang' ? 'bi-caret-up-fill' : 'bi-caret-down-fill'"></i>
+                            </a>
+                            <div class="dropdown-menu-s" :class="{ 'show': activeDropdown === 'magang' }">
+                                <Link :href="route('kkn')" class="span-title-menu not-default-size">KKN</Link>
+                                <hr />
                             </div>
                         </div>
-                    </div>
+                        
+                        <!-- Permintaan Akademik -->
+                        <div class="dropdown-s submenu-laporan">
+                            <Link href="/tugasakhir" class="dropdown-toggle-s">
+                                <i class="fa fa-graduation-cap"></i> Permintaan Akademik
+                            </Link>
+                        </div>
+                    </template>
 
+                    <!-- Menu untuk ADMIN saja -->
+                    <template v-if="$page.props.auth.user.role === 'admin'">
+                        <!-- Kelola Mahasiswa -->
+                        <div class="dropdown-s">
+                            <Link :href="route('admin.mahasiswa')" class="dropdown-toggle-s">
+                                <i class="fa fa-users"></i> Kelola Mahasiswa
+                            </Link>
+                        </div>
+
+                        <!-- Validasi Permintaan -->
+                        <div class="dropdown-s">
+                            <Link :href="route('admin.validasi')" class="dropdown-toggle-s">
+                                <i class="fa fa-check-square"></i> Validasi Permintaan
+                            </Link>
+                        </div>
+
+                        <!-- Penilaian -->
+                        <div class="dropdown-s">
+                            <Link :href="route('admin.penilaian')" class="dropdown-toggle-s">
+                                <i class="fa fa-star"></i> Penilaian
+                            </Link>
+                        </div>
+
+                        <!-- Laporan -->
+                        <div class="dropdown-s">
+                            <Link :href="route('admin.laporan')" class="dropdown-toggle-s">
+                                <i class="fa fa-file-text"></i> Laporan
+                            </Link>
+                        </div>
+                    </template>
                 </div>
             </div>
         </template>
@@ -89,6 +106,7 @@
     import '../../../css/master.css'
     import { Link, usePage } from '@inertiajs/vue3';
     import PanelLayout from "@/Layouts/PanelLayout.vue";
+    import OneTimeLogoSplash from '@/Components/OneTimeLogoSplash.vue';
     import { ref, provide, onMounted, onBeforeUnmount, watch } from 'vue'
 
     const activeDropdown = ref(null)
@@ -221,6 +239,14 @@
     transition: all 0.2s ease;
 }
 
+.submenu-magang .dropdown-toggle-s {
+    color: white;
+}
+
+.submenu-magang .span-title-menu {
+    color: white;
+}
+
 .dropdown-toggle-s:hover {
     background-color: #f8f9fa;
 }
@@ -274,5 +300,6 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    color: white !important;
 }
 </style>

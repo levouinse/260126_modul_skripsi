@@ -15,7 +15,7 @@
                             +62 451 123 456
                         </a>
                     </div>
-                    
+
                     <!-- Right: User Menu -->
                     <div class="topbar-right">
                         <div class="dropdown user-dropdown" ref="userDropdown">
@@ -37,7 +37,7 @@
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a
-                                    :href="'#'"
+                                    :href="route('logout')"
                                     class="dropdown-item text-danger ignore-color"
                                 >
                                     <i class="bi bi-box-arrow-right"></i>
@@ -146,6 +146,7 @@ onBeforeUnmount(() => {
     font-size: 0.85rem;
     margin-right: 20px;
     transition: color 0.3s ease;
+    color: white;
 }
 
 
@@ -340,19 +341,19 @@ onBeforeUnmount(() => {
     .topbar-left {
         display: none;
     }
-    
+
     .nav-toggle {
         display: flex;
     }
-    
+
     .university-name {
         font-size: 1.1rem;
     }
-    
+
     .system-name {
         font-size: 0.75rem;
     }
-    
+
     .user-name {
         display: none;
     }
