@@ -1,5 +1,5 @@
 <template>
-<div class="container-fluid py-4">
+<div class="general-2">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
             <h1 class="h3 fw-bold text-dark mb-1">Laporan</h1>
@@ -74,18 +74,20 @@
                 <div class="card-body">
                     <h5 class="fw-bold mb-3">Ringkasan</h5>
                     <table class="table table-sm">
-                        <tr>
-                            <td>Total Aktivitas</td>
-                            <td class="text-end fw-bold">{{ stats.totalAktivitas }}</td>
-                        </tr>
-                        <tr>
-                            <td>Total Permintaan</td>
-                            <td class="text-end fw-bold">{{ stats.totalPermintaan }}</td>
-                        </tr>
-                        <tr>
-                            <td>Total KKN</td>
-                            <td class="text-end fw-bold">{{ stats.totalKKN }}</td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td>Total Aktivitas</td>
+                                <td class="text-end fw-bold">{{ stats.totalAktivitas }}</td>
+                            </tr>
+                            <tr>
+                                <td>Total Permintaan</td>
+                                <td class="text-end fw-bold">{{ stats.totalPermintaan }}</td>
+                            </tr>
+                            <tr>
+                                <td>Total KKN</td>
+                                <td class="text-end fw-bold">{{ stats.totalKKN }}</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>

@@ -104,7 +104,7 @@
                             <div class="timeline">
                                 <div v-for="item in progressList" :key="item.id" class="timeline-item" :class="{'completed': item.is_selesai}">
                                     <div class="timeline-content">
-                                        <div class="d-flex justify-content-between mb-2">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
                                             <div>
                                                 <h6 class="mb-1 fw-bold">
                                                     <i class="fa me-2" :class="item.is_selesai ? 'fa-check-circle text-success' : 'fa-circle-o text-warning'"></i>
@@ -112,7 +112,7 @@
                                                 </h6>
                                                 <p class="text-muted small mb-1">{{ item.deskripsi }}</p>
                                             </div>
-                                            <span class="badge" :class="item.is_selesai ? 'bg-success text-white' : 'bg-warning text-dark'">
+                                            <span class="badge badge-status" :class="item.is_selesai ? 'bg-success text-white' : 'bg-warning text-dark'">
                                                 {{ item.is_selesai ? 'Selesai' : 'Proses' }}
                                             </span>
                                         </div>
@@ -456,6 +456,13 @@ function submitUpload() {
 
 .timeline-item.completed .timeline-content {
     border-left-color: #28a745;
+}
+
+.badge-status {
+    flex-shrink: 0;
+    align-self: flex-start;
+    line-height: 1.5;
+    padding: 0.35em 0.65em;
 }
 
 input, select, textarea{
